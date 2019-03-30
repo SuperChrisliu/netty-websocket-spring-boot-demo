@@ -36,8 +36,8 @@ public class Client implements SmartInitializingSingleton {
     @Override
     public void afterSingletonsInstantiated() {
         EurekaClientConfigBean eurekaClientConfigBean = new EurekaClientConfigBean();
-        eurekaClientConfigBean.setProxyHost("127.0.0.1");
-        eurekaClientConfigBean.setProxyPort("8880");
+//        eurekaClientConfigBean.setProxyHost("127.0.0.1");
+//        eurekaClientConfigBean.setProxyPort("8880");
         eurekaClientConfigBean.setServiceUrl(new HashMap<String, String>(){{
             put("defaultZone", defaultZone);
         }});
