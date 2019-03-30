@@ -1,0 +1,43 @@
+server:
+  port: 8777
+
+spring:
+  zipkin:
+    base-url: http://test.com:9411
+  sleuth:
+    traceId128: true
+    sampler:
+      probability: 1.0
+  profiles:
+    active: con
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lowerCaseServiceId: true
+  #      routes:
+#        - id: limit_route
+#          uri: http://httpbin.org:80/get
+#          filters:
+#            - name: RequestRateLimiter
+#              args:
+#                key-resolver: '#{@hostAddrKeyResolver}'
+#                redis-rate-limiter.replenishRate: 1
+#                redis-rate-limiter.burstCapacity: 3
+  application:
+    name: gateway-limiter
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: ALWAYS
