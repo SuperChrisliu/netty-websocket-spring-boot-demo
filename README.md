@@ -1,6 +1,10 @@
 ### 简介
 将[netty-websocket-Server](https://github.com/YeautyYE/netty-websocket-spring-boot-starter "netty-websocket-spring-boot-starter")注册到EurekaServer的demo
 
+### 更新
+这个demo是一个springboot 注册两个服务（http和websocket）。也许你希望只注册一个服务（websocket），可以参考这个项目https://github.com/SuperChrisliu/JTT1078Server/blob/master/src/main/java/com/tsingtech/jtt1078/discovery/EurekaConnfigure.java
+。就是自己构造一个`EurekaInstanceConfigBean`注入，修改`EurekaInstanceConfigBean`配置中的端口为websocket的端口。
+
 ### 启动
 分别启动`eureka-server（端口：8761）`，`gateway（端口：8777）`，`ws-service（端口：8779）`三个项目.
 
